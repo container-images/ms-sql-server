@@ -1,3 +1,6 @@
+NOTE: this came from the template described below but hasn't been fully modified to comply with this layout. As a result, as checked in, this may not work. 
+
+
 # container-image-template
 
 This is a template of a git repository which is a source for building container images.
