@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
     vagrant_host.vm.box = "fedora/24-cloud-base"
     vagrant_host.vm.hostname = "sqlserver-tester"
     
-    config.vm.synced_folder "../..", "/home/vagrant/sync/", type: "rsync",
+    config.vm.synced_folder "../", "/home/vagrant/sync/", type: "rsync",
                             rsync__exclude: [ ".git/", ".#*", "*~" ] #want to get all files, but if you target the root, vagrant uses --delete which is no fun
     
     
@@ -26,8 +26,6 @@ Vagrant.configure(2) do |config|
     vagrant_host.vm.provision 'shell', inline: "mkdir -p /mnt/msql-data/data"
     vagrant_host.vm.provision 'shell', inline: "mkdir -p /mnt/msql-data/log"
     
-#    vagrant_host.vm.provision 'shell', inline: "ln -s ~/sync /vagrant/sync"
-
   end
 
 end
