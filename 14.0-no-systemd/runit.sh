@@ -24,5 +24,5 @@ if [ "$2" = "y" ]
        docker build -t $IMAGE .
 fi
 
-/usr/bin/docker run -d -t -p 1433:1433 -v $DATADIR:/var/opt/mssql/data:rw,z -v $LOGDIR:/var/opt/mssql/log:rw,z -e ACCEPT_EULA=$ACCEPT_EULA -e SA_PASSWORD=$SA_PASSWORD $IMAGE
+/usr/bin/docker run -d -t -p 1433:1433 --name ms-sql-server -v $DATADIR:/var/opt/mssql/data:rw,z -v $LOGDIR:/var/opt/mssql/log:rw,z -e ACCEPT_EULA=$ACCEPT_EULA -e SA_PASSWORD=$SA_PASSWORD $IMAGE
 
