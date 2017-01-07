@@ -4,6 +4,8 @@ display_usage() {
     echo -e "\nUsage:\n$0 SA_PASSWORD [Build? y/N] \n" 
 } 
 
+#TODO more sophisticated options, might make more sense as a python script
+
 # if less than one argument supplied, display usage 
 if [  $# -le 0 ] 
 then 
@@ -15,7 +17,7 @@ DATADIR="/mnt/msql-data/data"
 LOGDIR="/mnt/msql-data/log"
 ACCEPT_EULA="YES"
 SA_PASSWORD=$1
-IMAGE="langdon/fedora-mssqlserver"
+IMAGE="$USER/fedora-mssqlserver"
 
 if [ "$2" = "y" ]
    then
